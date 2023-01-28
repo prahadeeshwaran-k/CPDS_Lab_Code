@@ -24,12 +24,12 @@ void pop()
     //temp is used to free the head node
     struct node *temp;
 
-    printf("Poped element = %d\n", head->data);
-    temp = head;
-    //make the head node points to the next node.
-    //logically removing the node
-    head = head->next;
-    free(temp);
+        printf("Poped element = %d\n", head->data);
+        temp = head;
+        //make the head node points to the next node.
+        //logically removing the node
+        head = head->next;
+        free(temp);
 }
 
 //print the linked list
