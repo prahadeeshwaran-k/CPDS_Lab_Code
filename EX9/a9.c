@@ -1,22 +1,30 @@
-//Write a C Program for implementation of singly linked list
-// Created by praha on 27-01-2023.
-//
-#include<stdio.h>
-int main(){
-    int n,i,m=0,flag=0;
-    printf("Enter the number to check prime:");
-    scanf("%d",&n);
-    m=n/2;
-    for(i=2;i<=m;i++)
+//Write a C Program to count the repeated numbers in an array of elements
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    //declare array and initialize the variables
+    int arr[10000],i,j,n,count=0 ;
+    printf("Enter the size of the array- ");
+    scanf("%d", &n);
+    printf("Enter elements in the array- ");
+    for(i=0; i<n; i++)
     {
-        if(n%i==0)
+        scanf("%d",&arr[i]);
+    }
+    //loops to iterate through the array
+    for(i=0; i<n; i++)
+    {
+        for(j = i + 1; j < n; j++)
         {
-            printf("Number is not prime");
-            flag=1;
-            break;
+            //Condition to check if the element is duplicate or not
+            if(arr[i] == arr[j])
+            {
+                count++;
+                break;
+            }
         }
     }
-    if(flag==0)
-        printf("Number is prime");
+    printf("Total duplicate numbers in the array- %d",count);
     return 0;
 }
